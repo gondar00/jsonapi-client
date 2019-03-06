@@ -208,8 +208,8 @@ class Base {
     ).serialize(this);
   }
 
-  static deserialize(response) {
-    return new Deserializer(this.deserializerOptions)
+  static deserialize(response, deserializerOptions) {
+    return new Deserializer(deserializerOptions || this.deserializerOptions)
       .deserialize(response)
       .then((data) => {
         if (Array.isArray(data)) {
