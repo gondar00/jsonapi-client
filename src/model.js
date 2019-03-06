@@ -248,7 +248,7 @@ class Base {
   // }
   validate() {}
 
-  static fetch(id, args = {}) {
+  fetch(id, args = {}) {
     return this.adapter
       .get(`${ this.constructBaseURL(args) }/${ id }`)
       .then(({ data }) => this.deserialize(data));
